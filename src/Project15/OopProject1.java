@@ -147,6 +147,5 @@ class Bank {
         this.name = name;
         this.customerList = customerList;
 
-
     }
 }
