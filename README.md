@@ -1,12 +1,13 @@
 # OOP
+
 **deadline:** 1 week
 **members:** Aiko and Sezima
 
-
 ---
-### Week 12 
 
-# --Суперкласс и подкласс:-- 
+### Week 12
+
+# --Суперкласс и подкласс:--
 
 Суперкласс (или базовый класс) - это класс, который предоставляет свойства и методы, которые могут быть унаследованы другими классами.
 Подкласс (или производный класс) - это класс, который наследует свойства и методы суперкласса и может добавлять свои собственные свойства и методы.
@@ -17,7 +18,7 @@
 java
 Copy code
 class SubClass extends SuperClass {
-    // Дополнительные свойства и методы подкласса
+// Дополнительные свойства и методы подкласса
 }
 
 ### Переопределение методов:
@@ -29,7 +30,7 @@ java
 Copy code
 @Override
 void someMethod() {
-    // Новая реализация метода
+// Новая реализация метода
 }
 
 ### Конструкторы в наследовании:
@@ -39,31 +40,31 @@ void someMethod() {
 java
 Copy code
 public SubClass() {
-    *super();* // Вызывает конструктор суперкласса
-    // Дополнительная инициализация подкласса
+_super();_ // Вызывает конструктор суперкласса
+// Дополнительная инициализация подкласса
 }
 Доступ к членам суперкласса:
 
 Подкласс имеет доступ к публичным и защищенным членам суперкласса (поли, методы).
 Приватные члены суперкласса не доступны в подклассе.
 
-In Java, this is a keyword that is used to refer to the current instance of a class. 
+In Java, this is a keyword that is used to refer to the current instance of a class.
 It can be used in several different contexts:
 
-Reference to Current Object: The most common use of this is to refer to the current instance of the class within instance methods. 
+Reference to Current Object: The most common use of this is to refer to the current instance of the class within instance methods.
 It allows you to access or modify instance variables and call other methods on the current object.
 
-
 ## Constructor
-In Java, a constructor is a special type of method that is used to initialize objects of a class. 
-Constructors have the same name as the class and do not have a return type, not even void. They are called automatically when an object of the class is created using the `new` keyword. Constructors are primarily used to set the initial state of an object by initializing its instance variables.
 
+In Java, a constructor is a special type of method that is used to initialize objects of a class.
+Constructors have the same name as the class and do not have a return type, not even void. They are called automatically when an object of the class is created using the `new` keyword. Constructors are primarily used to set the initial state of an object by initializing its instance variables.
 
 There are two main types of constructors in Java:
 
 1. **Default Constructor**: If a class does not explicitly define any constructors, Java provides a default constructor with no parameters. This default constructor initializes the object with default values (e.g., numeric types are initialized to 0, object references are initialized to `null`, etc.).
 
    Example of a default constructor:
+
    ```java
    public class MyClass {
        // Default constructor
@@ -76,11 +77,12 @@ There are two main types of constructors in Java:
 2. **Parameterized Constructor**: These constructors accept one or more parameters, allowing you to pass values to initialize the object with specific values.
 
    Example of a parameterized constructor:
+
    ```java
    public class Person {
        private String name;
        private int age;
-       
+
        // Parameterized constructor
        public Person(String name, int age) {
            this.name = name;
@@ -91,16 +93,21 @@ There are two main types of constructors in Java:
 
 You can have multiple constructors in a class, as long as they have different parameter lists (known as constructor overloading). This allows you to create objects in different ways with various sets of initial values.
 
-* * *
+В Java, существуют различные **типы переменных (static, instance, final, local)** и методов (static, instance), и у них есть разные характеристики и способы создания:
+
+---
+
 В Java, существуют различные **типы переменных (static, instance, final, local)** и методов (static, instance), и у них есть разные характеристики и способы создания:
 
 1. ## **Static (статические) переменные**:
+
    - Они принадлежат классу, а не экземпляру объекта. Это означает, что они общие для всех экземпляров данного класса.
    - Объявляются с использованием ключевого слова `static`.
    - Обычно инициализируются в блоке статической инициализации или в статическом методе класса.
    - Могут быть доступны без создания экземпляра класса.
 
 Пример:
+
 ```java
 public class MyClass {
     static int staticVariable = 10;
@@ -109,11 +116,13 @@ public class MyClass {
 ```
 
 2. ## **Instance (переменные экземпляра) переменные**:
+
    - Они принадлежат конкретному экземпляру класса и у каждого объекта класса могут быть свои значения для таких переменных.
    - Объявляются внутри класса, но не с использованием `static`.
    - Их значения устанавливаются при создании объекта.
 
 Пример:
+
 ```java
 public class MyClass {
     int instanceVariable = 20;
@@ -122,11 +131,13 @@ public class MyClass {
 ```
 
 3. ## **Final (константные) переменные**:
+
    - Они объявляются с использованием ключевого слова `final` и не могут быть изменены после инициализации.
    - Final переменные могут быть как статическими, так и переменными экземпляра.
    - Их значения должны быть установлены при объявлении или в конструкторе (для переменных экземпляра).
 
 Пример:
+
 ```java
 public class MyClass {
     final int constantInstanceVariable = 30;
@@ -136,10 +147,12 @@ public class MyClass {
 ```
 
 4. ## **Instance (методы экземпляра) методы**:
+
    - Эти методы привязаны к экземпляру класса и могут обращаться к переменным экземпляра.
    - Вызываются через экземпляр объекта.
 
 Пример:
+
 ```java
 public class MyClass {
     public void instanceMethod() {
@@ -149,10 +162,12 @@ public class MyClass {
 ```
 
 5. ## **Static (статические) методы**:
+
    - Они не привязаны к экземпляру класса и могут обращаться только к статическим переменным и методам.
    - Вызываются через имя класса, а не через экземпляр объекта.
 
 Пример:
+
 ```java
 public class MyClass {
     public static void staticMethod() {
@@ -161,12 +176,12 @@ public class MyClass {
 }
 ```
 
-
 В Java, метод, который привязан к экземпляру класса, называется **"методом экземпляра"** или "неметодом объекта". Этот метод оперирует данными, принадлежащими конкретному объекту данного класса и может изменять состояние этого объекта. Чтобы понять и использовать методы экземпляра, вам нужно выполнить следующие шаги:
 
 1. **Создание объекта класса**: Прежде чем вызвать метод экземпляра, вам нужно создать объект (инстанс) класса. Вы можете сделать это с помощью оператора `new`.
 
    Пример:
+
    ```java
    MyClass myObject = new MyClass(); // Создание экземпляра класса
    ```
@@ -174,6 +189,7 @@ public class MyClass {
 2. **Вызов метода экземпляра**: После создания объекта, вы можете вызвать его методы, используя имя объекта, оператор точки (`.`), и имя метода.
 
    Пример:
+
    ```java
    myObject.instanceMethod(); // Вызов метода экземпляра
    ```
@@ -181,6 +197,7 @@ public class MyClass {
 3. **Передача аргументов**: Методы экземпляра могут принимать аргументы (параметры), которые передаются внутрь метода при его вызове. Аргументы служат для передачи информации методу.
 
    Пример:
+
    ```java
    public void displayMessage(String message) {
        System.out.println(message);
@@ -193,6 +210,7 @@ public class MyClass {
 4. **Изменение состояния объекта**: Методы экземпляра могут изменять состояние объекта, к которому они привязаны, путем изменения значений его переменных (полей).
 
    Пример:
+
    ```java
    public void setName(String name) {
        this.name = name; // "this" используется для обращения к полю экземпляра класса
@@ -205,6 +223,7 @@ public class MyClass {
 5. **Доступ к переменным экземпляра**: Методы экземпляра могут обращаться к переменным экземпляра (полям) объекта, используя ключевое слово `this`.
 
    Пример:
+
    ```java
    public void displayInfo() {
        System.out.println("Имя: " + this.name);
@@ -213,8 +232,11 @@ public class MyClass {
    // Вызов метода для вывода информации об объекте
    myObject.displayInfo();
    ```
-* * *
-# Final 
+
+---
+
+# Final
+
 Переменные, объявленные с ключевым словом `final` в Java, называются "константами" и имеют следующие особенности и правила работы:
 
 1. **Неизменяемость**: После инициализации переменной как `final`, её значение не может быть изменено. Она становится неизменяемой.
@@ -248,11 +270,6 @@ public class Example {
 }
 ```
 
-
-
-* * *
-# @Override и @Overload
-
 ## @Override:
 
 @Override - это аннотация, которая указывает компилятору, что метод в подклассе предназначен для переопределения метода с такой же сигнатурой в суперклассе.
@@ -261,21 +278,19 @@ public class Example {
 java
 Copy code
 class Animal {
-    void makeSound() {
-        System.out.println("Animal makes a sound");
-    }
+void makeSound() {
+System.out.println("Animal makes a sound");
+}
 }
 
 class Dog extends Animal {
-    @Override
-    void makeSound() {
-        System.out.println("Dog barks");
-    }
+@Override
+void makeSound() {
+System.out.println("Dog barks");
+}
 }
 
-
-* * * 
-
+---
 
 ## @Overload:
 
@@ -286,17 +301,18 @@ class Dog extends Animal {
 java
 Copy code
 class Calculator {
-    int add(int a, int b) {
-        return a + b;
-    }
-    
+int add(int a, int b) {
+return a + b;
+}
+
     double add(double a, double b) {
         return a + b;
     }
+
 }
-В этом примере у нас есть два метода add, один для сложения целых чисел и другой для сложения чисел с плавающей запятой. 
+В этом примере у нас есть два метода add, один для сложения целых чисел и другой для сложения чисел с плавающей запятой.
 Они имеют разные сигнатуры (разные типы параметров), и компилятор различит их и вызовет соответствующий метод на основе типов аргументов.
 
-Важно понимать разницу между переопределением методов (@Override) и перегрузкой методов (@Overload). 
-**Переопределение** связано с наследованием и изменением реализации метода в подклассе, 
+Важно понимать разницу между переопределением методов (@Override) и перегрузкой методов (@Overload).
+**Переопределение** связано с наследованием и изменением реализации метода в подклассе,
 в то время как **перегрузка** связана с созданием нескольких методов с разными параметрами в одном классе.
